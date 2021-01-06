@@ -12,20 +12,22 @@ Summary: A service for the [openfido-client](https://github.com/slacgismo/openfi
 
 ## Development
 
-This service acts as a frontend to both the [openfido-workflow-service](https://github.com/slacgismo/openfido-workflow-service) and the [openfido-auth-service](https://github.com/slacgismo/openfido-auth-service), and cannot be usefully run without those services configured and setup locally as well. To do this:
+This service acts as a frontend to both the [openfido-workflow-service](https://github.com/slacgismo/openfido-workflow-service) and the [openfido-auth-service](https://github.com/slacgismo/openfido-auth-service).
 
- * checkout this repository as well as openfido-workflow-service and openfido-auth-service
- * Run all three docker-compose files to bring up the services.
+For single-machine local install, please clone the following openfido repositories in the same folder.
+* [openfido-app-service](https://github.com/slacgismo/openfido-app-service)
+* [openfido-auth-service](https://github.com/slacgismo/openfido-auth-service)
+* [openfido-utils](https://github.com/slacgismo/openfido-utils)
+* [openfido-workflow-service](https://github.com/slacgismo/openfido-workflow-service)
+* [openfido-client](https://github.com/slacgismo/openfido-client)
 
-A convenient way to do this is by setting environmental variables telling
-docker-compose which files to use, and where each project is:
+A convenient way to step up these services locally is by setting environmental variables that tell docker-compose which files to use, and where each project is:
 
     export DOCKER_BUILDKIT=1
     export COMPOSE_DOCKER_CLI_BUILD=1
 
     # Configure the auth service admin account
     cp ../openfido-auth-service/.env.example .auth-env
-    vi .auth-env
 
     # Because these repositories make use of private github repositories, they
     # need access to an SSH key that you have configured for github access:
@@ -54,8 +56,21 @@ docker-compose which files to use, and where each project is:
     u.is_system_admin = True
     models.db.session.commit()
 
-    # bring up all the services!
+    # Bring up all the services!
     docker-compose up
+
+    # To get the frontend running...
+    open another tab and navigate into the openfido-client repo
+    # You may want to create an environment to install npm
+    conda create -n venv_ofclient
+    conda activate venv_ofclient
+    npm install
+    npm start
+
+    # Navigate to http://localhost:3000/ and sign in with the super admin user
+    # For first time step up, you will need to create an organization under settings.
+    # These steps are also documented on the [openfido-client repo](https://github.com/slacgismo/openfido-client)/
+
 
 ## Deployment
 
