@@ -14,7 +14,7 @@ Summary: A service for the [openfido-client](https://github.com/slacgismo/openfi
 
 This service acts as a frontend to both the [openfido-workflow-service](https://github.com/slacgismo/openfido-workflow-service) and the [openfido-auth-service](https://github.com/slacgismo/openfido-auth-service).
 
-For single-machine local install, please clone the following openfido repositories in the same folder.
+For single-machine local install, please clone the following openfido repositories in the same folder:
 * [openfido-app-service](https://github.com/slacgismo/openfido-app-service)
 * [openfido-auth-service](https://github.com/slacgismo/openfido-auth-service)
 * [openfido-utils](https://github.com/slacgismo/openfido-utils)
@@ -60,16 +60,14 @@ A convenient way to step up these services locally is by setting environmental v
     docker-compose up
 
     # To get the frontend running...
-    open another tab and navigate into the openfido-client repo
-    # You may want to create an environment to install npm
+    # Open another tab and navigate into the openfido-client repo.
+    # You may want to create an environment to install npm.
     conda create -n venv_ofclient
     conda activate venv_ofclient
     npm install
     npm start
 
-    # Navigate to http://localhost:3000/ and sign in with the super admin user
-    # For first time step up, you will need to create an organization under settings.
-    # These steps are also documented on the [openfido-client repo](https://github.com/slacgismo/openfido-client)/
+If the frontend is running, navigate to http://localhost:3000/ and sign in with the super admin user. For first time step up, you will need to create an organization under settings.
 
 
 ## Deployment
