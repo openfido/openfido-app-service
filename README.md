@@ -14,7 +14,7 @@ Summary: A service for the [openfido-client](https://github.com/slacgismo/openfi
 
 This service acts as a frontend to both the [openfido-workflow-service](https://github.com/slacgismo/openfido-workflow-service) and the [openfido-auth-service](https://github.com/slacgismo/openfido-auth-service).
 
-For single-machine local install, please clone the following openfido repositories in the same folder:
+For single-machine local setup, please clone the following openfido repositories in the same folder.
 * [openfido-app-service](https://github.com/slacgismo/openfido-app-service)
 * [openfido-auth-service](https://github.com/slacgismo/openfido-auth-service)
 * [openfido-utils](https://github.com/slacgismo/openfido-utils)
