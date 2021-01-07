@@ -60,10 +60,10 @@ A convenient way to set up these services locally is by setting environmental va
     docker-compose up
 
     # To get the frontend running...
-    # Open another tab and navigate into the openfido-client repo.
-    # You may want to create an environment to install npm.
-    conda create -n venv_ofclient
-    conda activate venv_ofclient
+    # Open another tab and navigate into the openfido-client repo
+    # You can also follow the instructions on the [openfido-client repo](https://github.com/slacgismo/openfido-client)
+    cd openfido-client
+    nvm use
     npm install
     npm start
 
