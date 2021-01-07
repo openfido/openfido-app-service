@@ -21,7 +21,7 @@ For single-machine local setup, please clone the following openfido repositories
 * [openfido-workflow-service](https://github.com/slacgismo/openfido-workflow-service)
 * [openfido-client](https://github.com/slacgismo/openfido-client)
 
-A convenient way to step up these services locally is by setting environmental variables that tell docker-compose which files to use, and where each project is:
+A convenient way to set up these services locally is by setting environmental variables that tell docker-compose which files to use, and where each project is:
 
     export DOCKER_BUILDKIT=1
     export COMPOSE_DOCKER_CLI_BUILD=1
@@ -67,7 +67,7 @@ A convenient way to step up these services locally is by setting environmental v
     npm install
     npm start
 
-If the frontend is running, navigate to http://localhost:3000/ and sign in with the super admin user. For first time step up, you will need to create an organization under settings.
+If the frontend is running, navigate to http://localhost:3000/ and sign in with the super admin user. For first time set up, you will need to create an organization under settings.
 
 
 ## Deployment
