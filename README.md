@@ -66,7 +66,8 @@ A convenient way to set up these services locally is by setting environmental va
     npm install
     npm start
 
-If the frontend is running, navigate to http://localhost:3000/ and sign in with the super admin user. For first time set up, you will need to create an organization under settings. You can also checkout the frontend setup instructions on the [openfido-client repo](https://github.com/slacgismo/openfido-client)
+If the frontend is running, navigate to http://localhost:3000/ and sign in with the super admin user. For first time set up, you will need to create an organization under settings. <br />
+You can also checkout the frontend setup instructions on the [openfido-client repo](https://github.com/slacgismo/openfido-client).
 
 
 ## Deployment
