@@ -31,7 +31,7 @@ docker-compose which files to use, and where each project is:
     # need access to an SSH key that you have configured for github access:
     touch .worker-env
     touch ../openfido-auth-service/.env
-    docker-compose build --build-arg SSH_PRIVATE_KEY="$(cat ~/.ssh/id_rsa)"
+    docker-compose build --build-arg SSH_PRIVATE_KEY="$(cat ~/.ssh/id_ed25519)"
 
     # Initialize all the databases for all the services:
     docker-compose run --rm auth-service flask db upgrade
