@@ -16,7 +16,7 @@ This service acts as a frontend to both the [openfido-workflow-service](https://
 
  * checkout this repository as well as openfido-workflow-service and openfido-auth-service
  * Run all three docker-compose files to bring up the services.
-
+ * Reminer:`id_rsa` cannot include `passphrase` when it's generated. 
 A convenient way to do this is by setting environmental variables telling
 docker-compose which files to use, and where each project is:
 
