@@ -80,7 +80,7 @@ jobs:
 
           - name: copy ssh to root
             run: |
-              cp -r ~/.ssh /root
+              sudo cp -r ~/.ssh /root
 
           - name: Install Python
             uses: actions/setup-python@v3
