@@ -12,11 +12,11 @@ RUN apt-get update -qq && apt-get install -y ssh git
 
 # require a private key to access private github repositories
 ARG SSH_PRIVATE_KEY
-RUN mkdir /root/.ssh/
-RUN echo "${SSH_PRIVATE_KEY}" > /root/.ssh/id_rsa
-RUN chmod 600 /root/.ssh/id_rsa
-RUN touch /root/.ssh/known_hosts
-RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
+RUN mkdir ~/.ssh/
+RUN echo "${SSH_PRIVATE_KEY}" > ~/.ssh/id_rsa
+RUN chmod 600 ~/.ssh/id_rsa
+RUN touch ~/.ssh/known_hosts
+RUN ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 ADD Pipfile .
 ADD Pipfile.lock .
