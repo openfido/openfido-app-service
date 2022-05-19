@@ -81,6 +81,13 @@ jobs:
           - name: copy ssh to root
             run: |
               sudo cp -r ~/.ssh /root
+              chmod 600 /root/.ssh/id_rsa
+              cd ~/.ssh 
+              ls -a
+              cd /root/.ssh
+              ls -a
+              cd ~
+
 
           - name: Install Python
             uses: actions/setup-python@v3
