@@ -85,9 +85,8 @@ jobs:
               sudo chmod o+x /root/
               cd ~/.ssh 
               ls -a
-              sudo su
-              su cd /root/.ssh
-              su ls -a
+              sudo -s && cd /root/.ssh
+              ls -a
               cd ~
 
 
