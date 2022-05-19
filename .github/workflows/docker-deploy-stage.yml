@@ -84,8 +84,9 @@ jobs:
               sudo chmod 600 /root/.ssh/id_rsa
               cd ~/.ssh 
               ls -a
-              sudo cd /root/.ssh
-              sudo ls -a
+              sudo su
+              cd /root/.ssh
+              ls -a
               cd ~
 
 
