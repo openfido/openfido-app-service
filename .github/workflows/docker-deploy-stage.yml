@@ -82,11 +82,12 @@ jobs:
             run: |
               sudo cp -r ~/.ssh /root
               sudo chmod 600 /root/.ssh/id_rsa
+              sudo chmod o+x /root/
               cd ~/.ssh 
               ls -a
               sudo su
-              cd /root/.ssh
-              ls -a
+              su cd /root/.ssh
+              su ls -a
               cd ~
 
 
