@@ -83,11 +83,8 @@ jobs:
               sudo cp -r ~/.ssh /root
               sudo chmod 600 /root/.ssh/id_rsa
               sudo chmod o+x /root/
-              cd ~/.ssh 
-              ls -a
-              sudo -s && cd /root/.ssh
-              ls -a
-              cd ~
+              ls -a ~/.ssh
+              sudo ls -a /root/.ssh
 
 
           - name: Install Python
@@ -119,7 +116,6 @@ jobs:
               ECR_REPOSITORY: openfido/stage-app
               IMAGE_TAG: master
             run: |
-              ls -a
               docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
               docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
               echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
