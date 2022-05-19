@@ -81,7 +81,7 @@ jobs:
           - name: copy ssh to root
             run: |
               sudo cp -r ~/.ssh /root
-              chmod 600 /root/.ssh/id_rsa
+              sudo chmod 600 /root/.ssh/id_rsa
               cd ~/.ssh 
               ls -a
               cd /root/.ssh
