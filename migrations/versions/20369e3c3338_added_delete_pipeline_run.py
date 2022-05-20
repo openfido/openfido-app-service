@@ -21,7 +21,7 @@ def upgrade():
     op.alter_column('artifact_chart', 'is_deleted',
                existing_type=sa.BOOLEAN(),
                nullable=True)
-    op.add_column('organization_pipeline_run', sa.Column('is_deleted', sa.Boolean(), nullable=False))
+    op.add_column('organization_pipeline_run', sa.Column('is_deleted', sa.Boolean(), nullable=False,server_default="0"))
     op.alter_column('organization_workflow_pipeline_run', 'workflow_run_uuid',
                existing_type=sa.VARCHAR(length=32),
                nullable=True,
