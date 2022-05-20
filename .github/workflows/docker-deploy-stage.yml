@@ -116,7 +116,10 @@ jobs:
               ECR_REPOSITORY: openfido/stage-app
               IMAGE_TAG: master
             run: |
-              docker build --ssh default -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+              eval $(ssh-agent)
+              ssh-add ~/.ssh/id_rsa
+              export DOCKER_BUILDKIT=1
+              docker build --ssh default=${SSH_AUTH_SOCK} -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
               docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
               echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
