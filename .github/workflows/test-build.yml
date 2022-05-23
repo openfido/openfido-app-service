@@ -49,7 +49,7 @@ jobs:
           - name: Build
             run: |
               mkdir test-results
-              pipenv run invoke test --junit --enforce-percent 98
+              pipenv run invoke test --junit --enforce-percent 97
 
           - name: Store test results as artifacts
             uses: actions/upload-artifact@v2
