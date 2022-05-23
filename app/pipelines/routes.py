@@ -553,6 +553,7 @@ def pipeline_run(
     except HTTPError as http_error:
         return {"message": http_error.args[0]}, 503
 
+
 @organization_pipeline_bp.route(
     "/<organization_uuid>/pipelines/<organization_pipeline_uuid>/runs/<organization_pipeline_run_uuid>",
     methods=["DELETE"],
