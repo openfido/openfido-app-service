@@ -8,7 +8,7 @@ from app.workflows.models import (
 
 
 def find_organization_workflows(organization_uuid):
-    """Fetches all OrganizationWorkflows associated with an organization"""
+    """ Fetches all OrganizationWorkflows associated with an organization """
     return OrganizationWorkflow.query.filter(
         OrganizationWorkflow.organization_uuid == organization_uuid,
         OrganizationWorkflow.is_deleted == False,
@@ -16,7 +16,7 @@ def find_organization_workflows(organization_uuid):
 
 
 def find_organization_workflow(organization_uuid, organization_workflow_uuid):
-    """Fetches an OrganizationWorkflows associated with an organization"""
+    """ Fetches an OrganizationWorkflows associated with an organization """
     return OrganizationWorkflow.query.filter(
         OrganizationWorkflow.organization_uuid == organization_uuid,
         OrganizationWorkflow.is_deleted == False,
@@ -27,7 +27,7 @@ def find_organization_workflow(organization_uuid, organization_workflow_uuid):
 def find_organization_workflow_pipelines(
     organization_workflow_uuid, organization_pipeline_id
 ):
-    """Fetches all OrganizationWorkflowPipelines associated with an organization pipeline."""
+    """Fetches all OrganizationWorkflowPipelines associated with an organization pipeline. """
     return OrganizationWorkflowPipeline.query.filter(
         OrganizationWorkflowPipeline.organization_workflow_uuid
         == organization_workflow_uuid,
@@ -39,7 +39,7 @@ def find_organization_workflow_pipelines(
 def find_organization_workflow_pipeline(
     organization_workflow_uuid, organization_workflow_pipeline_uuid
 ):
-    """Fetches an OrganizationWorkflowPipeline associated with an organization pipeline."""
+    """Fetches an OrganizationWorkflowPipeline associated with an organization pipeline. """
     return OrganizationWorkflowPipeline.query.filter(
         OrganizationWorkflowPipeline.organization_workflow_uuid
         == organization_workflow_uuid,
@@ -51,7 +51,7 @@ def find_organization_workflow_pipeline(
 def find_organization_workflow_pipeline_by_workflow_pipeline_uuid(
     organization_workflow_uuid, workflow_pipeline_uuid
 ):
-    """Fetches an OrganizationWorkflowPipeline associated with an organization pipeline."""
+    """Fetches an OrganizationWorkflowPipeline associated with an organization pipeline. """
     return OrganizationWorkflowPipeline.query.filter(
         OrganizationWorkflowPipeline.organization_workflow_uuid
         == organization_workflow_uuid,
@@ -73,7 +73,7 @@ def find_organization_workflow_run(
 
 
 def find_organization_workflow_pipeline_run_by_workflow_run_uuid(workflow_run_uuid):
-    """Fetches an OrganizationWorkflowPipelineRun by workflow run uuid."""
+    """Fetches an OrganizationWorkflowPipelineRun by workflow run uuid. """
     return OrganizationWorkflowPipelineRun.query.filter(
         OrganizationWorkflowPipelineRun.workflow_run_uuid == workflow_run_uuid
     ).one_or_none()

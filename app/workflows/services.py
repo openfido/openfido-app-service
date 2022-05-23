@@ -39,7 +39,7 @@ logger = logging.getLogger("workflows.services")
 
 
 def create_workflow(organization_uuid, request_json):
-    """Create a new workflow associated with an organization."""
+    """ Create a new workflow associated with an organization. """
     response = requests.post(
         f"{current_app.config[WORKFLOW_HOSTNAME]}/v1/workflows",
         headers={
@@ -69,7 +69,7 @@ def create_workflow(organization_uuid, request_json):
 
 
 def fetch_workflows(organization_uuid):
-    """Fetch all Organization Workflows."""
+    """Fetch all Organization Workflows. """
 
     organization_workflows = find_organization_workflows(organization_uuid)
 
@@ -109,7 +109,7 @@ def fetch_workflows(organization_uuid):
 
 
 def fetch_workflow(organization_uuid, organization_workflow_uuid):
-    """Fetch a Organization Workflow."""
+    """Fetch a Organization Workflow. """
 
     organization_workflow = find_organization_workflow(
         organization_uuid, organization_workflow_uuid
@@ -140,7 +140,7 @@ def fetch_workflow(organization_uuid, organization_workflow_uuid):
 
 
 def update_workflow(organization_uuid, organization_workflow_uuid, request_json):
-    """Update an Organization Workflow."""
+    """Update an Organization Workflow. """
 
     organization_workflow = find_organization_workflow(
         organization_uuid, organization_workflow_uuid
@@ -176,7 +176,7 @@ def update_workflow(organization_uuid, organization_workflow_uuid, request_json)
 
 
 def delete_workflow(organization_uuid, organization_workflow_uuid):
-    """Delete an Organization Workflow."""
+    """Delete an Organization Workflow. """
 
     organization_workflow = find_organization_workflow(
         organization_uuid, organization_workflow_uuid
@@ -410,7 +410,7 @@ def update_workflow_pipeline(
     organization_workflow_pipeline_uuid,
     request_json,
 ):
-    """Updates an Organization Workflow Pipeline."""
+    """Updates an Organization Workflow Pipeline. """
 
     data = CreateWorkflowPipelineSchema().load(request_json)
 
@@ -492,7 +492,7 @@ def update_workflow_pipeline(
 def delete_workflow_pipeline(
     organization_uuid, organization_workflow_uuid, organization_workflow_pipeline_uuid
 ):
-    """Deletes an Organization Workflow Pipeline."""
+    """Deletes an Organization Workflow Pipeline. """
 
     organization_workflow_pipeline = find_organization_workflow_pipeline(
         organization_workflow_uuid, organization_workflow_pipeline_uuid
