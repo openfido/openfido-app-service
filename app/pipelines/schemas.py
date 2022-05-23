@@ -5,7 +5,7 @@ from .models import ArtifactChart
 
 
 class CreateArtifactChart(Schema):
-    """ Validation schema for create_artifact_chart() """
+    """Validation schema for create_artifact_chart()"""
 
     name = fields.Str(
         required=True,

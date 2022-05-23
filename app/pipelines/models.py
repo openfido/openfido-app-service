@@ -4,7 +4,7 @@ db = get_db()
 
 
 class OrganizationPipeline(CommonColumnsMixin, db.Model):
-    """ Represents a 'pipeline' job of a specific organization. """
+    """Represents a 'pipeline' job of a specific organization."""
 
     __tablename__ = "organization_pipeline"
 
@@ -30,7 +30,7 @@ class OrganizationPipeline(CommonColumnsMixin, db.Model):
 
 
 class OrganizationPipelineInputFile(CommonColumnsMixin, db.Model):
-    """ An input file associated with a OrganizationPipeline. """
+    """An input file associated with a OrganizationPipeline."""
 
     __tablename__ = "organization_pipeline_input_file"
 
@@ -46,7 +46,7 @@ class OrganizationPipelineInputFile(CommonColumnsMixin, db.Model):
 
 
 class OrganizationPipelineRun(CommonColumnsMixin, db.Model):
-    """ A pipeline run within an organization """
+    """A pipeline run within an organization"""
 
     __tablename__ = "organization_pipeline_run"
 
@@ -83,7 +83,7 @@ class OrganizationPipelineRun(CommonColumnsMixin, db.Model):
 
 
 class ArtifactChart(CommonColumnsMixin, db.Model):
-    """ A pipeline run within an organization """
+    """A pipeline run within an organization"""
 
     __tablename__ = "artifact_chart"
 
@@ -99,7 +99,7 @@ class ArtifactChart(CommonColumnsMixin, db.Model):
 
 
 class PostProcessingState(CommonColumnsMixin, db.Model):
-    """ Lookup table status codes of post processing jobs """
+    """Lookup table status codes of post processing jobs"""
 
     __tablename__ = "post_processing_state"
 
@@ -114,7 +114,7 @@ class PostProcessingState(CommonColumnsMixin, db.Model):
 
 
 class OrganizationPipelineRunPostProcessingState(CommonColumnsMixin, db.Model):
-    """ The statuses of on organization pipeline """
+    """The statuses of on organization pipeline"""
 
     __tablename__ = "organization_pipeline_run_post_processing_state"
 

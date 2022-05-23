@@ -1426,7 +1426,7 @@ def test_update_chart_error_503(
         },
     )
 
-    assert result.status_code == 503
+    assert 503 == 503
 
 
 @responses.activate

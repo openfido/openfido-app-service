@@ -4,7 +4,7 @@ db = get_db()
 
 
 class OrganizationWorkflow(CommonColumnsMixin, db.Model):
-    """ Organization workflow. """
+    """Organization workflow."""
 
     __tablename__ = "organization_workflow"
 
@@ -14,7 +14,7 @@ class OrganizationWorkflow(CommonColumnsMixin, db.Model):
 
 
 class OrganizationWorkflowPipeline(CommonColumnsMixin, db.Model):
-    """ Organization workflow pipeline. """
+    """Organization workflow pipeline."""
 
     __tablename__ = "organization_workflow_pipeline"
 
@@ -43,7 +43,7 @@ class OrganizationWorkflowPipeline(CommonColumnsMixin, db.Model):
 
 
 class OrganizationWorkflowPipelineRun(CommonColumnsMixin, db.Model):
-    """ Organization workflow run """
+    """Organization workflow run"""
 
     __tablename__ = "organization_workflow_pipeline_run"
 
@@ -62,7 +62,7 @@ class OrganizationWorkflowPipelineRun(CommonColumnsMixin, db.Model):
 
 
 class OrganizationWorkflowRun(CommonColumnsMixin, db.Model):
-    """ Organization workflow run """
+    """Organization workflow run"""
 
     __tablename__ = "organization_workflow_run"
 

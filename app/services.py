@@ -5,7 +5,7 @@ from .constants import AUTH_HOSTNAME
 
 
 def fetch_is_user_in_org(organization_uuid, jwt_token, user_uuid):
-    """ Verify user_uuid is a member of organization_uuid by calling AUTH_HOSTNAME API. """
+    """Verify user_uuid is a member of organization_uuid by calling AUTH_HOSTNAME API."""
     response = requests.get(
         f"{current_app.config[AUTH_HOSTNAME]}/users/{user_uuid}/organizations",
         headers={

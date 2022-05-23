@@ -31,7 +31,7 @@ from .queries import (
 
 
 def create_organization_pipeline(organization_uuid, pipeline_uuid):
-    """ Create OrganizationPipeline record. """
+    """Create OrganizationPipeline record."""
     pipeline = OrganizationPipeline(
         organization_uuid=organization_uuid,
         pipeline_uuid=pipeline_uuid,
@@ -43,7 +43,7 @@ def create_organization_pipeline(organization_uuid, pipeline_uuid):
 
 
 def create_pipeline(organization_uuid, request_json):
-    """ Create a new pipeline associated with an organization. """
+    """Create a new pipeline associated with an organization."""
     response = requests.post(
         f"{current_app.config[WORKFLOW_HOSTNAME]}/v1/pipelines",
         headers={
@@ -70,7 +70,7 @@ def create_pipeline(organization_uuid, request_json):
 
 
 def update_pipeline(organization_uuid, pipeline_uuid, request_json):
-    """ Update a pipeline associated with an organization. """
+    """Update a pipeline associated with an organization."""
     organization_pipeline = find_organization_pipeline(organization_uuid, pipeline_uuid)
     if not organization_pipeline:
         raise ValueError({"message": "organizational_pipeline_uuid not found"})
@@ -225,7 +225,7 @@ def fetch_pipelines(organization_uuid):
 
 
 def create_pipeline_input_file(organization_pipeline, filename, stream):
-    """ Create a OrganizationPipelineInputFile from a stream. """
+    """Create a OrganizationPipelineInputFile from a stream."""
     if len(filename) < 2:
         raise ValueError("filename too short")
     if len(filename) > OrganizationPipelineInputFile.name.type.length:
