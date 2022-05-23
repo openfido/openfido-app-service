@@ -8,7 +8,7 @@ from sqlalchemy import and_, or_
 
 
 def find_organization_pipelines(organization_uuid):
-    """Fetch all OrganizationPipelines associated with an organization"""
+    """ Fetch all OrganizationPipelines associated with an organization """
     return OrganizationPipeline.query.filter(
         OrganizationPipeline.organization_uuid == organization_uuid,
         OrganizationPipeline.is_deleted == False,
@@ -16,7 +16,7 @@ def find_organization_pipelines(organization_uuid):
 
 
 def find_organization_pipeline(organization_uuid, organization_pipeline_uuid):
-    """Fetch a OrganizationPipeline"""
+    """ Fetch a OrganizationPipeline """
     return OrganizationPipeline.query.filter(
         OrganizationPipeline.organization_uuid == organization_uuid,
         OrganizationPipeline.uuid == organization_pipeline_uuid,
@@ -25,19 +25,19 @@ def find_organization_pipeline(organization_uuid, organization_pipeline_uuid):
 
 
 def find_organization_pipeline_by_id(organization_pipeline_id):
-    """Fetcha a OrganizationPipeline by ID"""
+    """ Fetcha a OrganizationPipeline by ID"""
     return OrganizationPipeline.query.get(organization_pipeline_id)
 
 
 def find_organization_pipeline_by_pipeline_run_uuid(pipeline_uuid):
-    """Fetch a OrganizationPipeline by pipeline uuid"""
+    """ Fetch a OrganizationPipeline by pipeline uuid"""
     return OrganizationPipelineRun.query.filter(
         OrganizationPipelineRun.pipeline_run_uuid == pipeline_uuid
     ).one_or_none()
 
 
 def find_organization_pipeline_input_files(organization_pipeline_id):
-    """Search for Organization Pipeline Input Files"""
+    """ Search for Organization Pipeline Input Files """
     return OrganizationPipelineInputFile.query.filter(
         OrganizationPipelineInputFile.organization_pipeline_id
         == organization_pipeline_id
@@ -45,7 +45,7 @@ def find_organization_pipeline_input_files(organization_pipeline_id):
 
 
 def search_organization_pipeline_input_files(organization_pipeline_id, uuids):
-    """Find Organization Pipeline Input Files"""
+    """ Find Organization Pipeline Input Files """
     return OrganizationPipelineInputFile.query.filter(
         OrganizationPipelineInputFile.organization_pipeline_id
         == organization_pipeline_id,
@@ -71,7 +71,7 @@ def find_organization_pipeline_run(organization_pipeline_id, uuid):
 
 
 def find_latest_organization_pipeline_run(organization_pipeline_id):
-    """Find the latest Organization Pipeline Run for an Organization Pipeline."""
+    """Find the latest Organization Pipeline Run for an Organization Pipeline. """
     return (
         OrganizationPipelineRun.query.join(OrganizationPipeline)
         .filter(

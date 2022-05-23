@@ -34,7 +34,7 @@ CONFIG_VARS = (
 
 
 def create_app(config=None):
-    """Create initial app."""
+    """ Create initial app. """
     app = Flask(__name__)
     app.config.from_object("app.default_settings")
 

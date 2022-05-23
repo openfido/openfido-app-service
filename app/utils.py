@@ -20,7 +20,7 @@ logger = logging.getLogger("utils")
 
 @unique
 class ApplicationsEnum(IntEnum):
-    """All possible types of applications that can access this API."""
+    """ All possible types of applications that can access this API. """
 
     REACT_CLIENT = 1
 
@@ -111,5 +111,5 @@ def make_hash(password, salt=None):
 
 
 def verify_hash(password, p_hash, salt):
-    """Returns True when 'password' matches a value from make_hash()."""
+    """ Returns True when 'password' matches a value from make_hash(). """
     return make_hash(password, salt)[0] == p_hash
