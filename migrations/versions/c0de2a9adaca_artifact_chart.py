@@ -22,7 +22,7 @@ inspector = Inspector.from_engine(conn)
 tables = inspector.get_table_names()
 
 def upgrade():
-    if table_name not in tables:
+    if "artifact_chart" not in tables:
         op.create_table(
             "artifact_chart",
             sa.Column("id", sa.Integer(), nullable=False),
