@@ -26,30 +26,18 @@ jobs:
             with:
               python-version: 3.8
 
-          - name: install pipenv
+          - name: install/upgrade pip
             run: |
               python -m pip install --upgrade pip
-              pip install pipenv
 
-          - name: Cache pip environment
-            uses: actions/cache@v3
-            env:
-              cache-name: cache-pipenv
-            with:
-              path: .venv
-              key: ${{ runner.os }}-python-${{ steps.setup-python.outputs.python-version }}-pipenv-${{ hashFiles('Pipfile.lock') }}
-              restore-keys: |
-                ${{ runner.os }}-python-${{ steps.setup-python.outputs.python-version }}-
-                ${{ runner.os }}-python-
-                ${{ runner.os }}-
 
           - name: Install Dependencies
-            run: pipenv install --dev --deploy
+            run: python -m pip install -r requirements.txt
 
           - name: Build
             run: |
               mkdir test-results
-              pipenv run invoke test --junit --enforce-percent 97
+              python -m invoke test --junit --enforce-percent 97
 
           - name: Store test results as artifacts
             uses: actions/upload-artifact@v2
@@ -58,7 +46,7 @@ jobs:
               path: test-results
 
           - name: Style
-            run: pipenv run invoke style
+            run: python -m invoke style
 
           - name: Lint
-            run: pipenv run invoke lint --fail-under=9
+            run: python -m invoke lint --fail-under=9

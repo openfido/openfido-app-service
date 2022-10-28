@@ -18,9 +18,8 @@ RUN chmod 600 ~/.ssh/id_rsa
 RUN touch ~/.ssh/known_hosts
 RUN ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-ADD Pipfile .
-ADD Pipfile.lock .
-RUN pip install pipenv
+ADD requirements.txt .
+RUN pip install -r requirements.txt
 RUN --mount=type=ssh PIPENV_VENV_IN_PROJECT=1 pipenv install --dev --deploy
 
 FROM base as runtime
