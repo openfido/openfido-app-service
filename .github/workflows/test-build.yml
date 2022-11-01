@@ -7,8 +7,6 @@ jobs:
     test-build:
         runs-on: ubuntu-latest
         environment: Build
-        env:
-          PIPENV_VENV_IN_PROJECT: true
         steps:
           - name: Checkout Repository
             uses: actions/checkout@v3
