@@ -18,11 +18,11 @@ RUN mkdir ~/.ssh/
 RUN echo "${SSH_PRIVATE_KEY}" > ~/.ssh/id_rsa
 RUN chmod 600 ~/.ssh/id_rsa
 RUN touch ~/.ssh/known_hosts
-RUN ssh-keyscan -T 20 github.com >> ~/.ssh/known_hosts
+RUN ssh-keyscan -v github.com >> ~/.ssh/known_hosts
 
 ADD requirements.txt .
-RUN python3 -m venv .venv
-RUN source .venv/bin/activate
+RUN python3 -m venv /.venv
+RUN source /.venv/bin/activate
 RUN pip install -r requirements.txt
 
 FROM base as runtime
