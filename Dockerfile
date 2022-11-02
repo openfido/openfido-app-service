@@ -18,7 +18,8 @@ RUN mkdir ~/.ssh/
 RUN echo "${SSH_PRIVATE_KEY}" > ~/.ssh/id_rsa
 RUN chmod 600 ~/.ssh/id_rsa
 RUN touch ~/.ssh/known_hosts
-RUN while sleep 30; do ssh-keyscan github.com >> ~/.ssh/known_hosts; done;
+RUN ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+RUN ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts
 
 ADD requirements.txt .
 RUN python3 -m venv .venv
